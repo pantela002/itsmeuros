@@ -3,7 +3,7 @@ body {
 }
 
 .wrapper {
-  background: #02fff2;
+
   border-radius: 50px;
   margin-top: 20px;
   margin-left: 25px;
@@ -43,7 +43,7 @@ header {
 }
 
 .title {
-  transform: translateZ(-8px) scale(2);
+  transform: translateZ(-8px) scale(1.5);
   position: (0, 100, 0);
   font-size: 7rem;
   color: white;
@@ -55,4 +55,17 @@ section {
   padding: 2rem;
   background-color: #333;
   color: white;
+}
+
+.slika{
+  width: 15%;
+  height: 15%;
+  object-fit: cover;
+}
+
+.section-title{
+  font-size: 3rem;
+  color: white;
+  text-shadow: 0 0 5px black;
+  position: relative;
 }
