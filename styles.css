@@ -26,11 +26,11 @@ header {
 }
 
 .background {
-  transform: translateZ(-15px) scale(2);
+  transform: translateZ(-15px) scale(3);
 }
 
 .foreground {
-  transform: translateZ(-10px) scale(1.5);
+  transform: translateZ(-10px) scale(2);
 }
 
 .background,
