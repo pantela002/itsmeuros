@@ -1,9 +1,12 @@
+
+
 body {
   margin: 0;
+
 }
 
 .wrapper {
-
+  scroll-behavior: smooth;
   border-radius: 50px;
   margin-top: 20px;
   margin-left: 25px;
@@ -16,6 +19,7 @@ body {
 }
 
 header {
+
   position: relative;
   display: flex;
   justify-content: center;
@@ -51,6 +55,7 @@ header {
 }
 
 section {
+
   font-size: 2rem;
   padding: 2rem;
   background-color: #111c30;
@@ -71,6 +76,8 @@ section {
 }
 
 .menu {
+
+  height: 1000px;
   background-color: #111c30;
   display: flex;
   justify-content: center;
@@ -79,7 +86,7 @@ section {
 .menu ul {
   list-style: none;
   display: flex;
-  margin: 0;
+  margin-top: 20px;
   padding: 0;
 }
 
@@ -88,6 +95,7 @@ section {
 }
 
 .menu a {
+  border-radius: 6px;
   color: white;
   text-decoration: none;
   text-transform: uppercase;
@@ -97,6 +105,28 @@ section {
 }
 
 .menu a:hover {
-  background-color: white;
-  color: #111c30;
+  background-color: #ed0556;
+  color: black;
+}
+
+.my-link {
+
+  position: absolute;
+  margin-top: 700px;
+  display: block;
+  width: 200px;
+  height: 50px;
+  background-color: #ed0556;
+  color: black;
+  font-size: 1.8rem;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.my-link:hover {
+  background-color: #ff6b81;
+  color: black;
 }
