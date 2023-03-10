@@ -6,10 +6,7 @@ body {
 .wrapper {
   scroll-behavior: smooth;
   border-radius: 50px;
-  margin-top: 20px;
-  margin-left: 25px;
-  margin-right: 25px;
-  margin-bottom: 20px;
+  margin: 20px;
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
@@ -46,14 +43,16 @@ header {
 
 .title {
   transform: translateZ(-8px) scale(1.5);
-  position: (0, 100, 0);
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  transform: translate(-50%,-50%);
   font-size: 7rem;
   color: white;
-  text-shadow: 0 0 5px black;;
+  text-shadow: 0 0 5px black;
 }
 
 section {
-
   font-size: 2rem;
   padding: 2rem;
   background-color: #111c30;
@@ -61,8 +60,8 @@ section {
 }
 
 .slika{
-  width: 15%;
-  height: 15%;
+  width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -75,7 +74,7 @@ section {
 
 .menu {
 
-  height: 1000px;
+  height: 80px;
   background-color: #111c30;
   display: flex;
   justify-content: center;
@@ -84,7 +83,7 @@ section {
 .menu ul {
   list-style: none;
   display: flex;
-  margin-top: 20px;
+  margin: 0;
   padding: 0;
 }
 
@@ -109,9 +108,10 @@ section {
 
 .my-link {
 
-  position: absolute;
-  margin-top: 700px;
+  position: fixed;
+  bottom: 20px;
   display: block;
+  right: 20px;
   width: 200px;
   height: 50px;
   background-color: #ed0556;
