@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    font-size: 16px;
+    background: #ecf5ff;
+    color: rgb(4, 4, 98);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./images/backgroundzacss.png');
+    opacity: 1;
+
+}
+
+.container {
+    border-radius: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.content-wrapper {
+    border-radius: 25px;
+    overflow: hidden;
+    overflow-x: overlay;
+    margin: auto;
+    width: 1200px;
+    height: auto;
+    min-height: 100%;
+    background-color: rgb(255, 255, 255, 0.9);
+    text-align: center;
+    padding-top: 50px;
+}
+
+.item-container {
+    position: relative;
+    margin: 24px;
+    width: 320px;
+    height: 540px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.img-container,
+.body-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.img-container img {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.body-container {
+    position: relative;
+}
+
+.overlay {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(24, 83, 122, 0.6);
+    opacity: 0;
+    transition: height linear 0.4s, opacity linear 0.2s;
+}
+
+.item-container:hover .overlay {
+    opacity: 1;
+    height: 200px;
+}
+
+.event-info {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+.title,
+.price {
+    color: #18537a;
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 12px;
+}
+
+.info {
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.separator {
+    width: 20%;
+    height: 6px;
+    background-color: #17537a;
+    margin-bottom: 16px;
+}
+
+.additional-info {
+    border-top: 1px solid #bbb;
+    margin-top: 12px;
+    padding: 28px;
+    padding-bottom: 0;
+}
+
+.additional-info .info {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.info i {
+    color: #18537a;
+    font-size: 1.1em;
+    margin-right: 4px;
+}
+
+.info span {
+    color: #18537a;
+    font-weight: bolder;
+}
+
+.action {
+    color: #fff;
+    border: 3px solid #fff;
+    background-color: transparent;
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    outline: none;
+    cursor: pointer;
+    padding: 12px;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: background-color 0.4s, top 0.4s;
+}
+.action2 {
+    color: #fff;
+    border: 3px solid #fff;
+    background-color: transparent;
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    outline: none;
+    cursor: pointer;
+    padding: 12px;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: background-color 0.4s, top 0.4s;
+}
+
+
+.item-container:hover .action {
+    top: 50px;
+}
+.item-container:hover .action2 {
+    top: 120px;
+}
+
+.action:hover {
+    background-color: rgba(121, 199, 255, 0.9);
+}
+
+.action2:hover {
+    background-color: rgba(121, 199, 255, 0.9);
+}
+
+#prvi{
+    text-align: center;
+}
+
+.prebacivanje{
+    color: black;
+}
+
+
+.h1{
+    color: black;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
