@@ -1,128 +1,94 @@
-
-
 body {
-  margin: 0;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
 }
 
-.wrapper {
-  scroll-behavior: smooth;
-  width: 100%;
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  perspective: 10px;
+.container {
+    background-color: rgb(255, 183, 202);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Adjusted to column direction */
+    height: 100vh;
+    width: 40%;
 }
 
-header {
-
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  transform-style: preserve-3d;
-  z-index: -1;
+canvas {
+    background-color: black;
+    border: 2px solid rgb(0, 0, 0);
 }
 
-.background {
-  transform: translateZ(-8px) scale(2);
+h2 {
+    color: rgb(0, 0, 0);
+    text-align: center; /* Center the text horizontally */
+    margin-bottom: 20px; /* Add margin for spacing */
+}
+.chartContainer {
+    background-color: rgb(255, 183, 202);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    width: 60%;
+    height: 100%;
 }
 
-.foreground {
-  transform: translateZ(-4px) scale(1.5);
+.bars {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    background: #555;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: center;
+    width: 50vw; /* Use viewport width as a percentage */
+    height: 40vh; /* Use viewport height as a percentage */
+    box-shadow: 0 0 10px 0 #555;
+    border-radius: 5px;
 }
 
-.background,
-.foreground {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: -1;
+.bars li {
+    display: table-cell;
+    width: 10vw; /* Use viewport width as a percentage */
+    height: 40vh; /* Use viewport height as a percentage */
+    position: relative;
 }
 
-.title {
-  transform: translateZ(-8px) scale(1.5);
-  position: (0, 100, 0);
-  font-size: 5rem;
-  color: white;
-  text-shadow: 0 0 5px black;;
+.bars span {
+    width: 100%;
+    position: absolute;
+    text-align: center;
 }
 
-section {
-
-  font-size: 2rem;
-  padding: 2rem;
-  background-color: #111c30;
-  color: white;
+.bars .bar {
+    display: block;
+    background: #17C0EB;
+    width: 80%; /* Set the width to 80% of the parent container */
+    position: absolute;
+    bottom: 0;
+    margin-left: 10%; /* Adjust spacing as needed */
+    text-align: center;
+    box-shadow: 0 0 10px 0 rgba(23, 192, 235, 0.5);
+    transition: 0.5s;
+    transition-property: background, box-shadow;
 }
 
-.slika{
-  width: 15%;
-  height: 15%;
-  object-fit: cover;
+
+.bars .bar:hover {
+    background: #08f7b3;
+    box-shadow: 0 0 10px 0 rgba(85, 239, 196, 0.5);
+    cursor: pointer;
 }
 
-.section-title{
-  font-size: 3rem;
-  color: white;
-  text-shadow: 0 0 5px black;
-  position: relative;
-}
-
-.menu {
-
-  height: 1000px;
-  background-color: #111c30;
-  display: flex;
-  justify-content: center;
-}
-
-.menu ul {
-  list-style: none;
-  display: flex;
-  margin-top: 20px;
-  padding: 0;
-}
-
-.menu li {
-  margin: 0 1rem;
-}
-
-.menu a {
-  border-radius: 6px;
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  padding: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-.menu a:hover {
-  background-color: #ed0556;
-  color: black;
-}
-
-.my-link {
-
-  position: absolute;
-  margin-top: 600px;
-  display: block;
-  width: 200px;
-  height: 50px;
-  background-color: #ed0556;
-  color: black;
-  font-size: 1.8rem;
-  text-align: center;
-  line-height: 50px;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.my-link:hover {
-  background-color: #ff6b81;
-  color: black;
+.bars .bar:before {
+    color: #fff;
+    content: attr(data-percentage) '%';
+    position: relative;
+    bottom: 20px;
 }
