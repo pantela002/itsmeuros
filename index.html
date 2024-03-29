@@ -1,28 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friend Card</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .card {
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.5s;
+  }
+  
+  .card:hover {
+    transform: rotateY(10deg) rotateX(10deg);
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    box-sizing: border-box;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+</style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="valentines">
-            <div class="envelope">
-                <div class="card">
-                    <div class="text">
-                        Will you be my <br> Valentine
-                    </div>
-                    <div class="heart"></div>
-                </div>
-            </div>
-            <div class="front"></div>
-        </div>
-    </div>
-</body>
 
+<div class="card">
+  <img src="file.jpeg" alt="Davud gej">
+  <div class="card-content">
+    <h2>DAVUD JE GEJ</h2>
+    <p>This guy is gay.</p>
+  </div>
+</div>
+
+</body>
 </html>
