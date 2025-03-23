@@ -1,77 +1,51 @@
-document.addEventListener('DOMContentLoaded', async function () {
-    const canvas = document.getElementById('drawCanvas');
-    const ctx = canvas.getContext('2d');
-    let isDrawing = false;
-    const deleteButton = document.getElementById('deleteButton');
-    const downloadButton = document.getElementById('downloadButton');
-    const predictButton = document.getElementById('predictButton');
-    
+let count = 0;
+let counterDisplay = document.getElementById("counter");
 
-    function startDrawing(e) {
-        isDrawing = true;
-        draw(e);
+function createButton() {
+    let button = document.createElement("button");
+    button.innerText = "Click Me!";
+    button.classList.add("button");
+    button.style.top = Math.random() * (window.innerHeight - 50) + "px";
+    button.style.left = Math.random() * (window.innerWidth - 100) + "px";
+    button.onclick = function() {
+        count++;
+        counterDisplay.innerText = count;
+        button.remove();
+        if (count >= 23) {
+            showBirthdayCard();
+        } else {
+            createButton();
+        }
+    };
+    document.body.appendChild(button);
+}
+
+function showBirthdayCard() {
+    document.getElementById("birthdayCard").style.display = "block";
+    confettiEffect(1000);
+}
+
+function confettiEffect(amount) {
+    for (let i = 0; i < amount; i++) {
+        let confetti = document.createElement("div");
+        confetti.style.position = "absolute";
+        confetti.style.width = "10px";
+        confetti.style.height = "10px";
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        confetti.style.top = Math.random() * window.innerHeight + "px";
+        confetti.style.left = Math.random() * window.innerWidth + "px";
+        confetti.style.opacity = "0.8";
+        confetti.style.borderRadius = "50%";
+        confetti.style.transition = "transform 2s ease-out, opacity 2s";
+        document.body.appendChild(confetti);
+        setTimeout(() => {
+            confetti.style.transform = `translateY(${window.innerHeight}px)`;
+            confetti.style.opacity = "0";
+            setTimeout(() => confetti.remove(), 2000);
+        }, 100);
     }
+}
 
-    function stopDrawing() {
-        isDrawing = false;
-        ctx.beginPath();
-    }
-
-    function draw(e) {
-        if (!isDrawing) return;
-
-        ctx.lineWidth = 30;
-        ctx.lineCap = 'round';
-        ctx.strokeStyle = 'white';
-
-        const offsetX = e.clientX - canvas.getBoundingClientRect().left;
-        const offsetY = e.clientY - canvas.getBoundingClientRect().top;
-
-        ctx.lineTo(offsetX, offsetY);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.moveTo(offsetX, offsetY);
-    }
-
-    function deleteDrawing() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }
-
-    function downloadDrawing() {
-        // Create a temporary canvas
-        const tempCanvas = document.createElement('canvas');
-        const tempCtx = tempCanvas.getContext('2d');
-        tempCanvas.width = 28;
-        tempCanvas.height = 28;
-
-        // Set background color to black
-        tempCtx.fillStyle = 'black';
-        tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
-
-        // Draw white drawings on the black background
-        tempCtx.drawImage(canvas, 0, 0, 28, 28);
-
-        // Create download link
-        const dataUrl = tempCanvas.toDataURL('image/png');
-        const a = document.createElement('a');
-        a.href = dataUrl;
-        a.download = 'drawing.png';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-    }
-
-  
-    predictButton.addEventListener('click', async function () {
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const prediction = await predictNumber(imageData);
-        console.log(`Prediction: ${prediction}`);
-    });
-
-    deleteButton.addEventListener('click', deleteDrawing);
-    downloadButton.addEventListener('click', downloadDrawing);
-    canvas.addEventListener('mousedown', startDrawing);
-    canvas.addEventListener('mousemove', draw);
-    canvas.addEventListener('mouseup', stopDrawing);
-    canvas.addEventListener('mouseout', stopDrawing);
-});
+for (let i = 0; i < 10; i++) {
+    createButton();
+}
