@@ -8,7 +8,7 @@ function createButton() {
     button.style.top = Math.random() * (window.innerHeight - 50) + "px";
     button.style.left = Math.random() * (window.innerWidth - 100) + "px";
     button.onclick = function() {
-        confettiEffect(20);
+        confettiEffect(10);
         count++;
         counterDisplay.innerText = count;
         button.remove();
@@ -23,7 +23,7 @@ function createButton() {
 
 function showBirthdayCard() {
     document.getElementById("birthdayCard").style.display = "block";
-    confettiEffect(1000);
+    confettiEffect(600);
 }
 
 function confettiEffect(amount) {
