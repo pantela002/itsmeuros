@@ -6,7 +6,7 @@ function createButton() {
     button.innerText = "Click Me!";
     button.classList.add("button");
     button.style.top = Math.random() * (window.innerHeight - 50) + "px";
-    button.style.left = Math.random() * (window.innerWidth - 100) + "px";
+    button.style.left = Math.random() * (window.innerWidth - 150) + "px";
     button.onclick = function() {
         confettiEffect(10);
         count++;
@@ -24,6 +24,7 @@ function createButton() {
 function showBirthdayCard() {
     document.getElementById("birthdayCard").style.display = "block";
     confettiEffect(100);
+}
 
 function confettiEffect(amount) {
     for (let i = 0; i < amount; i++) {
