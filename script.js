@@ -8,6 +8,7 @@ function createButton() {
     button.style.top = Math.random() * (window.innerHeight - 50) + "px";
     button.style.left = Math.random() * (window.innerWidth - 100) + "px";
     button.onclick = function() {
+        confettiEffect(20);
         count++;
         counterDisplay.innerText = count;
         button.remove();
