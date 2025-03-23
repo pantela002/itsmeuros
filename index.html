@@ -3,95 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #fce4ec;
-        }
-        .button {
-            position: absolute;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #ff4081;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        #birthdayCard {
-            display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            background: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            font-size: 24px;
-            border-radius: 10px;
-        }
-    </style>
+    <title>Happy Birthday Tociiiiiiiiiiiiiiiiii <3!</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="birthdayCard">🎉 Happy Birthday! 🎉</div>
-    <script>
-        let count = 0;
-        
-        function createButton() {
-            let button = document.createElement("button");
-            button.innerText = "Click Me!";
-            button.classList.add("button");
-            button.style.top = Math.random() * (window.innerHeight - 50) + "px";
-            button.style.left = Math.random() * (window.innerWidth - 100) + "px";
-            button.onclick = function() {
-                count++;
-                button.remove();
-                if (count >= 10) {
-                    showBirthdayCard();
-                } else {
-                    createButton();
-                }
-            };
-            document.body.appendChild(button);
-        }
-
-        function showBirthdayCard() {
-            document.getElementById("birthdayCard").style.display = "block";
-            confettiEffect();
-        }
-
-        function confettiEffect() {
-            for (let i = 0; i < 100; i++) {
-                let confetti = document.createElement("div");
-                confetti.style.position = "absolute";
-                confetti.style.width = "10px";
-                confetti.style.height = "10px";
-                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-                confetti.style.top = Math.random() * window.innerHeight + "px";
-                confetti.style.left = Math.random() * window.innerWidth + "px";
-                confetti.style.opacity = "0.8";
-                confetti.style.borderRadius = "50%";
-                confetti.style.transition = "transform 2s ease-out, opacity 2s";
-                document.body.appendChild(confetti);
-                setTimeout(() => {
-                    confetti.style.transform = `translateY(${window.innerHeight}px)`;
-                    confetti.style.opacity = "0";
-                    setTimeout(() => confetti.remove(), 2000);
-                }, 100);
-            }
-        }
-
-        for (let i = 0; i < 23; i++) {
-            createButton();
-        }
-    </script>
+    <div id="counter">0</div>
+    <div id="birthdayCard">🎉 Happy Birthday My Friend Lejzr <3! 🎉</div>
+    <script src="script.js"></script>
 </body>
 </html>
