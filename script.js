@@ -46,6 +46,6 @@ function confettiEffect(amount) {
     }
 }
 
-for (let i = 0; i < 1; i++) {
+for (let i = 0; i < 3; i++) {
     createButton();
 }
