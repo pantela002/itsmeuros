@@ -23,7 +23,7 @@ function createButton() {
 
 function showBirthdayCard() {
     document.getElementById("birthdayCard").style.display = "block";
-    confettiEffect(600);
+    confettiEffect(400);
 }
 
 function confettiEffect(amount) {
