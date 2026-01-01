@@ -1,152 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Uroš Pantelić | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Volim te Tijana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --pink: #ff7ab6;
+      --pink-soft: #ffd6e8;
+      --bg: #fff6fb;
+      --text: #c2185b;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: "Georgia", serif;
-      background-color: #fdfcf9;
-      color: #2c2c2c;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
+      background: radial-gradient(circle at top, #fff, var(--bg));
+      font-family: 'Quicksand', sans-serif;
+      color: var(--text);
+      overflow-x: hidden;
     }
 
     header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: linear-gradient(90deg, var(--pink-soft), #fff);
+      padding: 16px 12px;
       text-align: center;
-      padding: 50px 20px 20px;
+      border-bottom: 1px solid #ffd0e2;
     }
 
     header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.3rem;
+      margin: 0;
+      font-family: 'Pacifico', cursive;
+      font-size: 28px;
+      color: var(--pink);
     }
 
     header p {
-      font-size: 1.1rem;
-      color: #555;
+      margin: 6px 0 0;
+      font-size: 14px;
+      opacity: 0.8;
     }
 
-    nav {
+    .container {
+      padding: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 14px 10px;
       text-align: center;
-      margin: 20px 0;
+      box-shadow: 0 6px 14px rgba(255, 122, 182, 0.25);
+      animation: float 6s ease-in-out infinite;
     }
 
-    nav a {
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 1rem;
-      color: #2c2c2c;
-      border-bottom: 1px solid transparent;
+    .card span {
+      display: block;
+      font-family: 'Pacifico', cursive;
+      font-size: 14px;
+      line-height: 1.25;
+      color: var(--pink);
     }
 
-    nav a:hover {
-      border-bottom: 1px solid #2c2c2c;
+    .card small {
+      display: block;
+      margin-top: 6px;
+      font-size: 11px;
+      opacity: 0.7;
     }
 
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    h2 {
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-      font-weight: normal;
-    }
-
-    .experience {
-      margin-bottom: 25px;
-    }
-
-    .experience h3 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
-
-    .experience p {
-      margin: 5px 0 10px;
-      color: #555;
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0px); }
     }
 
     footer {
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      color: #777;
+      padding: 18px 10px 28px;
+      font-size: 12px;
+      opacity: 0.7;
     }
 
-    footer a {
-      color: #2c2c2c;
-      text-decoration: none;
+    /* hearts background */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 18px;
+      animation: rise 10s linear infinite;
+      opacity: 0.6;
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    @keyframes rise {
+      from { transform: translateY(0) scale(1); }
+      to { transform: translateY(-120vh) scale(1.4); }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Uroš Pantelić</h1>
-    <p>Software Engineer | Machine Learning | Data Science</p>
+    <h1>Volim te Tijana 💕</h1>
+    <p>Najviše na svetu. Aloo 💖</p>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      Fourth-year Electrical Engineering student (Signals & Systems) at the University of Belgrade. 
-      Passionate about machine learning, large-scale systems, and building practical AI solutions.
-      Experienced with Python, C++, JavaScript/TypeScript, Git, and Linux.
-    </p>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-
-    <div class="experience">
-      <h3>Machine Learning Intern – Microsoft (2024)</h3>
-      <p>Researched selective state-space models (Mamba) and compared them to Transformer baselines (LLaMA/GPT). Benchmarked latency, throughput, and memory, producing internal reports for model trade-offs.</p>
-    </div>
-
-    <div class="experience">
-      <h3>Machine Learning Intern – Tenstorrent (2025–Present)</h3>
-      <p>Training and testing LLaMA models on TT hardware (JAX/Flax). Implemented tensor-parallel inference, optimized sharding, and improved performance benchmarking.</p>
-    </div>
-
-    <div class="experience">
-      <h3>Software Engineer – LUKOWA (2023)</h3>
-      <p>Built internal AI web apps for onboarding and developed a CV filtering tool with ranking/sorting features.</p>
-    </div>
-
-    <div class="experience">
-      <h3>Freelance – Automation & AI Solutions (2023–2024)</h3>
-      <p>Built and delivered automation tools, Instagram/YouTube bots, and lightweight websites. Completed multiple end-to-end paid projects.</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>
-      📧 <a href="mailto:pantelicu02@gmail.com">pantelicu02@gmail.com</a><br>
-      🌐 <a href="https://itsmeuros.com" target="_blank">itsmeuros.com</a><br>
-      💻 <a href="https://github.com/pantela002" target="_blank">GitHub</a><br>
-      🔗 <a href="https://linkedin.com/in/uros-pantelic" target="_blank">LinkedIn</a>
-    </p>
-  </section>
+  <main class="container">
+    <div id="grid" class="grid"></div>
+  </main>
 
   <footer>
-    © 2025 Uroš Pantelić
+    Napravljeno s ljubavlju 💗
   </footer>
+
+  <script>
+    const text = "Volim te Tijana najviše na svetu alooooooooooooooooooooooooo";
+    const grid = document.getElementById('grid');
+
+    // Change this number if you want MORE or LESS (e.g. 1000, 5000, 10000)
+    const COUNT = 300; // mobile-friendly; visually fills the page
+
+    for (let i = 0; i < COUNT; i++) {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      const span = document.createElement('span');
+      span.textContent = text;
+
+      const small = document.createElement('small');
+      small.textContent = `#${i + 1}`;
+
+      card.appendChild(span);
+      card.appendChild(small);
+      grid.appendChild(card);
+    }
+
+    // floating hearts
+    const hearts = ['💗','💖','💘','💝','💕'];
+    setInterval(() => {
+      const h = document.createElement('div');
+      h.className = 'heart';
+      h.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+      h.style.left = Math.random() * 100 + 'vw';
+      h.style.animationDuration = 6 + Math.random() * 6 + 's';
+      document.body.appendChild(h);
+      setTimeout(() => h.remove(), 12000);
+    }, 700);
+  </script>
 </body>
 </html>
